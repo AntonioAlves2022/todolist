@@ -21,5 +21,7 @@ function handleRequest(){
 // Função que exibe as tasks na view
 function showTasks(){
     // Seu código aqui
+    $tasks = getTasks();
+    require_once __DIR__.'/../views/tasks.php';
 }
 ?>
