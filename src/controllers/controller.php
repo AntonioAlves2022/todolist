@@ -12,7 +12,7 @@ function handleRequest(){
                 }
                 break;
             case 'toggle':
-                return
+                return;
                 break;
         }
     }

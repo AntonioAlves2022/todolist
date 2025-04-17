@@ -22,13 +22,26 @@
 
     <!-- Lista de tarefas -->
      <ul class="list-group">
-        <li class="list-group-item d-flex align-items-center">
+       <?php if(empty($tasks)):?>
+        <li class="list-group-item text-center text-mutted">
+          Nenhuma tarefa adicionada
+        </li>
+        <?php else: ?>
+          <?php foreach():?>
+          <!--O elementos irão se repetir-->
+          <?php endforeach;?>
+        <?php endif; ?>
+     </ul>
+    </div>
+
+<!--
+ <li class="list-group-item d-flex align-items-center">
           <form action="" class="me-3">
             <input type="hidden" name="action" value="toggle"/>
             <input type="hidden" name="id" value="id_do_item"/>
             <input type="checkbox" class="form-check-input"/>
           </form>
-          <span>Tarefa pendente 0001</span>
+          <span>Levar o cachorro no petshop</span>
         </li>
 
         <li class="list-group-item d-flex align-items-center">
@@ -37,9 +50,9 @@
             <input type="hidden" name="id" value="id_do_item"/>
             <input type="checkbox" class="form-check-input"/>
           </form>
-          <span>Tarefa pendente 0001</span>
+          <span>Estudar para a prova de php</span>
         </li>
-     </ul>
-    </div>
+
+-->
 </body>
 </html>
