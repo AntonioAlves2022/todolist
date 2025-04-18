@@ -12,7 +12,9 @@ function handleRequest(){
                 }
                 break;
             case 'toggle':
-                return;
+                if(isset($_POST['id'])){
+                    toggleTask($_POST['id']);
+                }
                 break;
         }
     }

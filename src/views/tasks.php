@@ -27,8 +27,18 @@
           Nenhuma tarefa adicionada
         </li>
         <?php else: ?>
-          <?php foreach():?>
+          <?php foreach($tasks as $task):?>
           <!--O elementos irão se repetir-->
+          <li class="list-group-item d-flex align-items-center <?=$task['completed']?'text-decoration-line-through':''?>">
+            <form method="post" class="me-3">
+              <input type="hidden" value="toggle" name="action"/>
+              <input type="hidden" name="id" value="<?=$task['id']?>"/>
+              <input type="checkbox" class="form-check-input" onchange=this.form.submit() <?=$task['completed']?'checked':''?>/>
+            </form>
+            <span>
+              <?=htmlspecialchars($task['description']);?>
+            </span>
+          </li>
           <?php endforeach;?>
         <?php endif; ?>
      </ul>
